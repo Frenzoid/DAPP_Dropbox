@@ -92,21 +92,32 @@ class App extends Component {
       }
 
       this.setState({ loading: true })
+
       // Assign value for the file without extension
       if (this.state.type === '') {
         this.setState({ type: 'none' })
       }
-      this.state.dstorage.methods.uploadFile(result[0].hash, result[0].size, this.state.type, this.state.name, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
-        this.setState({
-          loading: false,
-          type: null,
-          name: null
+
+      this.state.dstorage.methods.uploadFile(
+        result[0].hash,
+        result[0].size,
+        this.state.type,
+        this.state.name,
+        description)
+        .send({ from: this.state.account })
+        .on('transactionHash', (hash) => {
+          this.setState({
+            loading: false,
+            type: null,
+            name: null
+          })
+
+          window.location.reload()
         })
-        window.location.reload()
-      }).on('error', (e) => {
-        window.alert('Error')
-        this.setState({ loading: false })
-      })
+        .on('error', (e) => {
+          window.alert('Error')
+          this.setState({ loading: false })
+        })
     })
   }
 
