@@ -1,5 +1,5 @@
-## ``` Decentralized File Storage. ```
-A dropbox clone made with Blockchain, Ethereum, Solidity, truffle, ganache, Web3.js, Ipfs, and React.js
+# Decentralized File Storage.
+A dropbox clone made with Blockchain, Ethereum, Solidity, truffle, ganache, Web3.js, IPFS, and React.js
 
 Meant to learn blockchain technologies.
 
@@ -7,7 +7,6 @@ Meant to learn blockchain technologies.
 
 ## 🔧 Project Diagram:
 ![Project Diagram](https://i.gyazo.com/2738ea6743a40036756b1b5714ab9fa8.png)
-
 
 ## How to run.
 
