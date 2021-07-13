@@ -70,6 +70,7 @@ class App extends Component {
     const reader = new window.FileReader()
 
     reader.readAsArrayBuffer(file)
+
     reader.onloadend = () => {
       this.setState({
         buffer: Buffer(reader.result),
@@ -80,6 +81,7 @@ class App extends Component {
     }
   }
 
+  // Upload captured file
   uploadFile = description => {
     console.log("Submitting file to IPFS...")
 
@@ -116,6 +118,7 @@ class App extends Component {
         })
         .on('error', (e) => {
           window.alert('Error')
+          console.error(e)
           this.setState({ loading: false })
         })
     })
@@ -131,6 +134,7 @@ class App extends Component {
       type: null,
       name: null
     }
+
     this.uploadFile = this.uploadFile.bind(this)
     this.captureFile = this.captureFile.bind(this)
   }
