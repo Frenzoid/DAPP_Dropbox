@@ -57,7 +57,7 @@ contract('DStorage', ([deployer, uploader]) => {
 
       // FAILURE: File must have size
       await dstorage.uploadFile(fileHash, '', fileType, fileName, fileDescription, { from: uploader }).should.be.rejected;
-      
+
       // FAILURE: File must have type
       await dstorage.uploadFile(fileHash, fileSize, '', fileName, fileDescription, { from: uploader }).should.be.rejected;
 
