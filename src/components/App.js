@@ -142,15 +142,25 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} balance={this.state.balance} />
-        {this.state.loading
-          ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <Main
-            files={this.state.files}
-            captureFile={this.captureFile}
-            uploadFile={this.uploadFile}
-          />
+      
+        {
+          this.state.loading
+          ? 
+            <div id="loader" className="text-center mt-5">
+              <img src="https://codemyui.com/wp-content/uploads/2017/11/solid-colour-slide-puzzle-style-loading-animation.gif" alt="loading gif" />
+              <p>Loading...</p>
+            </div>
+          : 
+           <div>
+             <Navbar account={this.state.account} balance={this.state.balance} />
+             <Main
+                files={this.state.files}
+                captureFile={this.captureFile}
+                uploadFile={this.uploadFile}
+              />
+           </div>
         }
+        
       </div>
     );
   }
